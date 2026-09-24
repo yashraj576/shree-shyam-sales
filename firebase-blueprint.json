@@ -1,0 +1,67 @@
+{
+  "entities": {
+    "Admin": {
+      "title": "Admin",
+      "description": "Authorized administrator user profile",
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Administrator email address"
+        },
+        "role": {
+          "type": "string",
+          "enum": ["admin", "superadmin"],
+          "description": "Access level role"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp when admin access was granted"
+        }
+      },
+      "required": ["email", "role"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "Building material product record",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "Material name"
+        },
+        "brand": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Brand manufacturer"
+        },
+        "category": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Category key"
+        },
+        "basePrice": {
+          "type": "number",
+          "description": "Base wholesale price"
+        },
+        "stock": {
+          "type": "number",
+          "description": "Available stock quantity"
+        }
+      },
+      "required": ["name", "brand", "category", "basePrice", "stock"]
+    }
+  },
+  "firestore": {
+    "/admins/{adminId}": {
+      "schema": "Admin",
+      "description": "Collection of authorized store administrators"
+    },
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "Collection of construction materials in catalog"
+    }
+  }
+}

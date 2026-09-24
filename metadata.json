@@ -1,0 +1,6 @@
+{
+  "name": "Shree Shyam Sales",
+  "description": "Quality Building Materials, Cement, TMT Steel, Barricades & Construction Supplies. Site Delivery & Bulk Orders.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
